@@ -1,0 +1,25 @@
+/* -- Site fonts */
+
+/* -- Fontello */
+
+@font-face {
+    font-family: fontello;
+    src: url("{{ siteUrl }}fonts/fontello.woff2") format('woff2'), url("{{ siteUrl }}fonts/fontello.woff") format('woff');
+}
+
+/* -- Proxima Nova */
+
+@font-face {
+    font-family: Proxima-Nova-Regular;
+    src: url("{{ siteUrl }}fonts/Proxima-Nova-Regular.woff2") format('woff2'), url("{{ siteUrl }}fonts/Proxima-Nova-Regular.woff") format('woff');
+}
+
+@font-face {
+    font-family: Proxima-Nova-Bold;
+    src: url("{{ siteUrl }}fonts/Proxima-Nova-Bold.woff2") format('woff2'), url("{{ siteUrl }}fonts/Proxima-Nova-Bold.woff") format('woff');
+}
+
+@font-face {
+    font-family: Proxima-Nova-Black;
+    src: url("{{ siteUrl }}fonts/Proxima-Nova-Black.woff2") format('woff2'), url("{{ siteUrl }}fonts/Proxima-Nova-Black.woff") format('woff');
+}

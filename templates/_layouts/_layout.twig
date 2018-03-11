@@ -1,0 +1,179 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{%- minify -%}
+{% set baseUrl = alias('@baseUrl') ~ '/' %}
+{% set staticAssetsVersion = craft.app.config.general.custom.staticAssetsVersion %}
+{% header "Link: <#{baseUrl}>; rel=dns-prefetch;,<#{baseUrl}>; rel=preconnect; crossorigin;" %}
+<!DOCTYPE html>
+{%- endminify -%}
+
+<html lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+    {%- minify -%}
+    <head>
+        <link rel="dns-prefetch" href="{{ baseUrl }}">
+        <link rel="preconnect" href="{{ baseUrl }}" crossorigin="crossorigin">
+
+        {# -- Any <link> tags that should be included in the header #}
+        {% block _head_links %}{% endblock %}
+
+        {% import "_partials/_macros.twig" as macro %}
+        {% include "_partials/_global_header.twig" %}
+
+        {# -- ServiceWorker, loadjs, and tiny-cookie -- #}
+        <script>
+            {% if craft.app.config.general.isSystemOn %}
+                {{ source("_inlinejs/register-service-worker.min.js") }}
+            {% endif %}
+            {{ source("_inlinejs/loadjs.min.js") }}
+            {{ source("_inlinejs/modernizr.min.js") }}
+        </script>
+        {%- endminify -%}
+        {# -- CRITICAL CSS -- #}
+
+        {% set cacheVal = getCookie('critical-css') %}
+        {% if not cacheVal or cacheVal != staticAssetsVersion or craft.app.config.general.devMode %}
+            {{ setCookie('critical-css', staticAssetsVersion, now | date_modify("+7 days").timestamp ) }}
+            {# -- Inline CSS block used by templates for Critical CSS #}
+            {% block _inline_css %}{% endblock %}
+            <link rel="preload" href="{{ baseUrl }}css/site.combined.min.{{staticAssetsVersion}}.css" as="style" onload="this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="{{ baseUrl }}css/site.combined.min.{{staticAssetsVersion}}.css"></noscript>
+            <script>
+                {{ source("_inlinejs/loadCSS.min.js") }}
+                {{ source("_inlinejs/cssrelpreload.min.js") }}
+            </script>
+        {% else %}
+            <link rel="stylesheet" href="{{ baseUrl }}css/site.combined.min.{{staticAssetsVersion}}.css">
+        {% endif %}
+
+        {%- minify -%}
+        {% if not craft.app.config.general.devMode %}
+            {# -- Google Analytics -- #}
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    },
+                    i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '{{ baseUrl }}js/analytics.{{staticAssetsVersion}}.js', 'ga');
+                ga('create', 'XXXXX', 'auto');
+                ga('require', 'displayfeatures');
+                ga('send', 'pageview');
+            </script>
+        {% endif %}
+
+        {# -- PictureFill polyfill -- #}
+        <script>
+            var testImg = document.createElement("img");
+            if (!("srcset" in testImg) || !("sizes" in testImg)) {
+                document.createElement("picture");
+                var s = document.createElement("script");
+                s.setAttribute("src", "{{ baseUrl }}js/picturefill.min.{{staticAssetsVersion}}.js");
+                if ("async" in s) 
+                    s.setAttribute("async", true);
+                document.head.appendChild(s);
+            }
+        </script>
+
+        {# -- Site fonts -- #}
+        <style>
+            {% include "_inlinecss/_site_fonts.css" %}
+        </style>
+        {%- endminify -%}
+        {# -- FontFaceObserver -- #}
+
+        <script>
+            {{ source("_inlinejs/fontfaceobserver.min.js") }}
+            {{ source("_inlinejs/asyncload-site-fonts.min.js") }}
+        </script>
+
+        {%- minify -%}
+
+        {# -- Inline JS -- #}
+        <script type="text/javascript">
+            var staticAssetsVersion = "{{ staticAssetsVersion }}";
+            var assetsBaseUrl = "{{ baseUrl }}";
+            var retina = window.devicePixelRatio > 1;
+        </script>
+
+        {# -- jQuery JS -- 
+        <script src="{{ baseUrl }}js/jquery.min.{{staticAssetsVersion}}.js" ></script> #}
+
+        {# -- </head> JS -- #}
+        {% block _head_js %}
+        {% endblock %}
+
+    </head>
+
+    {# -- HTML Body -- #}
+    <body>
+        <div id="page-container">
+
+            {# -- Info header, including _navbar.twig -- #}
+            {% include "_partials/_info_header.twig" %}
+
+            <div id="content-container" class="container mx-auto">
+                <main>
+                    {# -- Primary content block -- #}
+                    {% block content %}{% endblock %}
+                </main>
+            </div>
+
+            {# -- Content that appears below the primary content block -- #}
+            {% block subcontent %}{% endblock %}
+
+            {# -- Info footer -- #}
+            {% include "_partials/_info_footer.twig" %}
+
+            {# -- HTML Footer -- #}
+            {% include "_partials/_global_footer.twig" %}
+
+        </div>
+
+        {# -- VueJS & Axios, along with our main app component instantiation -- 
+        <script>
+            // define a dependency bundle
+
+            loadjs(['{{ baseUrl }}js/main.min.{{staticAssetsVersion}}.js'], 'main');
+
+            loadjs.ready('main', {success: function () {/* All Javascript files are fully loaded */
+                }});
+        </script>  #}
+
+        <script>
+            loadjs(
+                [
+                    '{{ baseUrl }}js/jquery.min.{{staticAssetsVersion}}.js'
+                ],
+                'jquery'
+            );
+            loadjs.ready(['jquery'], {
+                success: function() {
+                    // jQuery is now loaded and ready to use
+                    loadjs(
+                        [
+                            '{{ baseUrl }}js/main.min.{{staticAssetsVersion}}.js',
+                        ],
+                        'main'
+                    );
+                    loadjs.ready(['main'], {
+                        success: function() {
+                            // jQuery and the jQuery plugins are now all loaded and ready to use
+                        }
+                    });
+                }
+            });
+        </script>
+
+        {# -- Inline JS -- #}
+        {% block _inline_js %}
+        {% endblock %}
+
+        {%- endminify -%}
+    </body>
+</html>
