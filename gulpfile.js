@@ -40,32 +40,23 @@ const banner = (function() {
     return result;
 })();
 
-// scss - build the scss to the build folder, including the required paths, and writing out a sourcemap
-gulp.task("scss", () => {
-    $.fancyLog("-> Compiling scss");
+// scss & tailwind  - build the scss & tailwind to the build folder, including the required paths, and writing out a sourcemap
+
+gulp.task("tailwind", () => {
+    $.fancyLog("-> Compiling tailwind css");
     return gulp.src(pkg.paths.src.scss + pkg.vars.scssName)
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.sass({
-                includePaths: pkg.paths.scss
-            })
+            includePaths: pkg.paths.scss
+        })
             .on("error", $.sass.logError))
         .pipe($.cached("sass_compile"))
-        .pipe($.autoprefixer())
-        .pipe($.sourcemaps.write("./"))
-        .pipe($.size({gzip: true, showFiles: true}))
-        .pipe(gulp.dest(pkg.paths.build.css));
-});
-
-// tailwind task - build the Tailwind CSS
-gulp.task("tailwind", () => {
-    $.fancyLog("-> Compiling tailwind css");
-    return gulp.src(pkg.paths.tailwindcss.src)
         .pipe($.postcss([
             $.tailwindcss(pkg.paths.tailwindcss.conf),
             require("autoprefixer"),
         ]))
-        .pipe($.if(process.env.NODE_ENV === "production",
+        .pipe($.if(process.env.NODE_ENV === "produciton",
             $.purgecss({
                 extractors: [{
                     extractor: TailwindExtractor,
@@ -75,6 +66,8 @@ gulp.task("tailwind", () => {
                 content: pkg.globs.purgecss
             })
         ))
+        .pipe($.sourcemaps.write("./"))
+        .pipe($.size({gzip: true, showFiles:true}))
         .pipe(gulp.dest(pkg.paths.build.css));
 });
 
@@ -89,7 +82,7 @@ class TailwindExtractor {
 }
 
 // css task - combine & minimize any distribution CSS into the public css folder, and add our banner to it
-gulp.task("css", ["tailwind", "scss"], () => {
+gulp.task("css", ["tailwind"], () => {
     $.fancyLog("-> Building css");
     return gulp.src(pkg.globs.distCss)
         .pipe($.plumber({errorHandler: onError}))
@@ -420,7 +413,7 @@ gulp.task("set-prod-node-env", function() {
 gulp.task("browserSync", function(){
     $.browserSync.init(['**/*.css', '**/*.js'], {
       browser: "firefoxnightly",  
-      proxy: "http://craft3-starter.local",// MAMP Settings
+      proxy: "http://craft.local",// MAMP Settings
       //server: {
       //  baseDir: 'dist'
       //}

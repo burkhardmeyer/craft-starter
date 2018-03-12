@@ -1,3 +1,11 @@
+/**
+ * @project        burkhardmeyer
+ * @author         Burkhard Meyer, mail@burkhardmeyer.com>
+ * @build          Mon, Mar 12, 2018 5:19 PM ET
+ * @release        ca5e28e98b18aeb20c982cb84cb850615b2ad672 [development]
+ * @copyright      Copyright (c) 2018, burkhardmeyer
+ *
+ */
 
 .icon-search:before { content: '\e800'; } /* '' */
 .icon-twitter:before { content: '\e801'; } /* '' */
@@ -665,25 +673,25 @@ button,
 }
 
 /**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
+  * Here you would add any of your custom component classes; stuff that you'd
+  * want loaded *before* the utilities so that the utilities could still
+  * override them.
+  *
+  * Example:
+  *
+  * .btn { ... }
+  * .form-input { ... }
+  *
+  * Or if using a preprocessor or `postcss-import`:
+  *
+  * @import "components/buttons";
+  * @import "components/forms";
+  */
 
 /* -- CSS variables */
 
 :root {
-  --outlineColor: #5db7a5, ;
+  --outlineColor: #5db7a5;
 }
 
 /* -- For screen readers */
@@ -702,7 +710,8 @@ button,
 /* -- A subtle focus style for keyboard-input elements */
 
 .text-input:focus {
-  outline: 1px solid var(--outlineColor); /* Adjust to suit your tastes */
+  outline: 1px solid var(--outlineColor);
+  /* Adjust to suit your tastes */
 }
 
 /* -- No outline for non-keyboard-inputs elements */
@@ -713,20 +722,21 @@ select:focus {
 }
 
 html.user-is-tabbing *:focus {
-  outline: 2px solid var(--outlineColor) !important; /* for non-webkit browsers */
+  outline: 2px solid var(--outlineColor) !important;
+  /* for non-webkit browsers */
   outline: 5px auto -webkit-focus-ring-color !important;
 }
 
 /**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, you should import this line from it's own file:
- *
- * @import "./tailwind-utilities.css";
- *
- * See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622
- */
+  * This injects all of Tailwind's utility classes, generated based on your
+  * config file.
+  *
+  * If using `postcss-import`, you should import this line from it's own file:
+  *
+  * @import "./tailwind-utilities.css";
+  *
+  * See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622
+  */
 
 .container {
   width: 100%;
@@ -4731,8 +4741,7 @@ html.user-is-tabbing *:focus {
 }
 
 .fonts-loaded h2,
-.fonts-loaded h3,
- {
+.fonts-loaded h3 {
   font-family: Proxima-Nova-Black, sans-serif;
 }
 
@@ -4775,19 +4784,26 @@ html.user-is-tabbing *:focus {
 }
 
 /**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
+  * Here you would add any custom utilities you need that don't come out of the
+  * box with Tailwind.
+  *
+  * Example :
+  *
+  * .bg-pattern-graph-paper { ... }
+  * .skew-45 { ... }
+  *
+  * Or if using a preprocessor or `postcss-import`:
+  *
+  * @import "utilities/background-patterns";
+  * @import "utilities/skew-transforms";
+  */
+
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com */
 
 @media (min-width: 576px) {
   .sm\:list-reset {
@@ -20612,12 +20628,6 @@ html.user-is-tabbing *:focus {
     z-index: auto;
   }
 }
-
-h1 {
-  font-size: 1.8rem;
-  margin: 0; }
-
-/* This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com */
 
 
 
