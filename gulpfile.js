@@ -40,7 +40,7 @@ const banner = (function() {
     return result;
 })();
 
-// scss & tailwind  - build the scss & tailwind to the build folder, including the required paths, and writing out a sourcemap
+// SCSS & tailwind  - build the scss & tailwind to the build folder, including the required paths, and writing out a sourcemap
 
 gulp.task("tailwind", () => {
     $.fancyLog("-> Compiling tailwind css");
