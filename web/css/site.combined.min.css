@@ -1,8 +1,8 @@
 /**
  * @project        burkhardmeyer
  * @author         Burkhard Meyer, mail@burkhardmeyer.com>
- * @build          Mon, Mar 12, 2018 5:19 PM ET
- * @release        ca5e28e98b18aeb20c982cb84cb850615b2ad672 [development]
+ * @build          Wed, Mar 14, 2018 9:34 PM ET
+ * @release        3944e5c3464fd8052098a26dd6388b23c8d81dbf [development]
  * @copyright      Copyright (c) 2018, burkhardmeyer
  *
  */
@@ -727,6 +727,11 @@ html.user-is-tabbing *:focus {
   outline: 5px auto -webkit-focus-ring-color !important;
 }
 
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
 /**
   * This injects all of Tailwind's utility classes, generated based on your
   * config file.
@@ -737,34 +742,6 @@ html.user-is-tabbing *:focus {
   *
   * See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622
   */
-
-.container {
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 992px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
 
 .list-reset {
   list-style: none;
@@ -1423,6 +1400,10 @@ html.user-is-tabbing *:focus {
 
 .bg-repeat-y {
   background-repeat: repeat-y;
+}
+
+.bg-auto {
+  background-size: auto;
 }
 
 .bg-cover {
@@ -2343,6 +2324,14 @@ html.user-is-tabbing *:focus {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-wait {
+  cursor: wait;
+}
+
+.cursor-move {
+  cursor: move;
 }
 
 .cursor-not-allowed {
@@ -3402,14 +3391,20 @@ html.user-is-tabbing *:focus {
   overflow: scroll;
 }
 
-.overflow-x-scroll {
+.overflow-x-auto {
   overflow-x: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 .overflow-y-scroll {
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
 }
 
 .scrolling-touch {
@@ -3682,6 +3677,11 @@ html.user-is-tabbing *:focus {
 
 .relative {
   position: relative;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .pin-none {
@@ -4728,28 +4728,6 @@ html.user-is-tabbing *:focus {
   z-index: auto;
 }
 
-/* -- Fonts */
-
-.fonts-loaded body,
-.fonts-loaded h1 {
-  font-family: Proxima-Nova-Regular, sans-serif;
-  font-style: normal;
-}
-
-.fonts-loaded strong {
-  font-family: Proxima-Nova-Bold, sans-serif;
-}
-
-.fonts-loaded h2,
-.fonts-loaded h3 {
-  font-family: Proxima-Nova-Black, sans-serif;
-}
-
-.fonts-loaded .kontakt__email,
-.fonts-loaded .kontakt__phone {
-  font-family: Proxima-Nova-Black, sans-serif;
-}
-
 /* -- Fontello */
 
 .fonts-loaded [class^="icon-"]:before {
@@ -4797,11 +4775,6 @@ html.user-is-tabbing *:focus {
   * @import "utilities/background-patterns";
   * @import "utilities/skew-transforms";
   */
-
-h1 {
-  font-size: 1.8rem;
-  margin: 0;
-}
 
 /* This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com */
 
@@ -5463,6 +5436,10 @@ h1 {
 
   .sm\:bg-repeat-y {
     background-repeat: repeat-y;
+  }
+
+  .sm\:bg-auto {
+    background-size: auto;
   }
 
   .sm\:bg-cover {
@@ -6383,6 +6360,14 @@ h1 {
 
   .sm\:cursor-pointer {
     cursor: pointer;
+  }
+
+  .sm\:cursor-wait {
+    cursor: wait;
+  }
+
+  .sm\:cursor-move {
+    cursor: move;
   }
 
   .sm\:cursor-not-allowed {
@@ -7442,14 +7427,20 @@ h1 {
     overflow: scroll;
   }
 
-  .sm\:overflow-x-scroll {
+  .sm\:overflow-x-auto {
     overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .sm\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .sm\:overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .sm\:overflow-y-scroll {
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: scroll;
   }
 
   .sm\:scrolling-touch {
@@ -7722,6 +7713,11 @@ h1 {
 
   .sm\:relative {
     position: relative;
+  }
+
+  .sm\:sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   .sm\:pin-none {
@@ -9421,6 +9417,10 @@ h1 {
     background-repeat: repeat-y;
   }
 
+  .md\:bg-auto {
+    background-size: auto;
+  }
+
   .md\:bg-cover {
     background-size: cover;
   }
@@ -10339,6 +10339,14 @@ h1 {
 
   .md\:cursor-pointer {
     cursor: pointer;
+  }
+
+  .md\:cursor-wait {
+    cursor: wait;
+  }
+
+  .md\:cursor-move {
+    cursor: move;
   }
 
   .md\:cursor-not-allowed {
@@ -11398,14 +11406,20 @@ h1 {
     overflow: scroll;
   }
 
-  .md\:overflow-x-scroll {
+  .md\:overflow-x-auto {
     overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .md\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .md\:overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .md\:overflow-y-scroll {
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: scroll;
   }
 
   .md\:scrolling-touch {
@@ -11678,6 +11692,11 @@ h1 {
 
   .md\:relative {
     position: relative;
+  }
+
+  .md\:sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   .md\:pin-none {
@@ -13377,6 +13396,10 @@ h1 {
     background-repeat: repeat-y;
   }
 
+  .lg\:bg-auto {
+    background-size: auto;
+  }
+
   .lg\:bg-cover {
     background-size: cover;
   }
@@ -14295,6 +14318,14 @@ h1 {
 
   .lg\:cursor-pointer {
     cursor: pointer;
+  }
+
+  .lg\:cursor-wait {
+    cursor: wait;
+  }
+
+  .lg\:cursor-move {
+    cursor: move;
   }
 
   .lg\:cursor-not-allowed {
@@ -15354,14 +15385,20 @@ h1 {
     overflow: scroll;
   }
 
-  .lg\:overflow-x-scroll {
+  .lg\:overflow-x-auto {
     overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .lg\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .lg\:overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .lg\:overflow-y-scroll {
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: scroll;
   }
 
   .lg\:scrolling-touch {
@@ -15634,6 +15671,11 @@ h1 {
 
   .lg\:relative {
     position: relative;
+  }
+
+  .lg\:sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   .lg\:pin-none {
@@ -17333,6 +17375,10 @@ h1 {
     background-repeat: repeat-y;
   }
 
+  .xl\:bg-auto {
+    background-size: auto;
+  }
+
   .xl\:bg-cover {
     background-size: cover;
   }
@@ -18251,6 +18297,14 @@ h1 {
 
   .xl\:cursor-pointer {
     cursor: pointer;
+  }
+
+  .xl\:cursor-wait {
+    cursor: wait;
+  }
+
+  .xl\:cursor-move {
+    cursor: move;
   }
 
   .xl\:cursor-not-allowed {
@@ -19310,14 +19364,20 @@ h1 {
     overflow: scroll;
   }
 
-  .xl\:overflow-x-scroll {
+  .xl\:overflow-x-auto {
     overflow-x: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .xl\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .xl\:overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .xl\:overflow-y-scroll {
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: scroll;
   }
 
   .xl\:scrolling-touch {
@@ -19590,6 +19650,11 @@ h1 {
 
   .xl\:relative {
     position: relative;
+  }
+
+  .xl\:sticky {
+    position: -webkit-sticky;
+    position: sticky;
   }
 
   .xl\:pin-none {

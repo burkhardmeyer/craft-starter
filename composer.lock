@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6640c7cdb10e8465e821310a79917208",
+    "content-hash": "0c18928926ce055209ce010efbb4cec9",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -372,11 +372,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.0-RC14",
+            "version": "3.0.0-RC15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/fb4faffb435e41756750144c0ed3724d2f52a86f",
-                "reference": "fb4faffb435e41756750144c0ed3724d2f52a86f",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/2c92030aa91e5ed655dd7896f7739737d8b8ea29",
+                "reference": "2c92030aa91e5ed655dd7896f7739737d8b8ea29",
                 "shasum": ""
             },
             "require": {
@@ -404,7 +404,7 @@
                 "pixelandtonic/imagine": "~0.7.1.2",
                 "seld/cli-prompt": "~1.0.3",
                 "twig/twig": "~2.4.4",
-                "yiisoft/yii2": "~2.0.14.0",
+                "yiisoft/yii2": "~2.0.14.2",
                 "yiisoft/yii2-debug": "~2.0.10",
                 "yiisoft/yii2-queue": "~2.0.1",
                 "yiisoft/yii2-swiftmailer": "~2.1.0",
@@ -446,7 +446,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-03-06T19:06:32+00:00"
+            "time": "2018-03-13T20:20:40+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1775,11 +1775,11 @@
         },
         {
             "name": "mundschenk-at/php-typography",
-            "version": "v6.1.2",
+            "version": "v6.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mundschenk-at/php-typography/zipball/d0e653125c3527947d12679becace2d7e101e20a",
-                "reference": "d0e653125c3527947d12679becace2d7e101e20a",
+                "url": "https://api.github.com/repos/mundschenk-at/php-typography/zipball/380eef4adc49efcf2368405e4a22f52d64ed24b1",
+                "reference": "380eef4adc49efcf2368405e4a22f52d64ed24b1",
                 "shasum": ""
             },
             "require": {
@@ -1787,17 +1787,6 @@
                 "ext-pcre": "*",
                 "masterminds/html5": "^2.3.0",
                 "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "brain/monkey": "^2.2.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-                "ext-curl": "*",
-                "phpbench/phpbench": "^0.13||^1.0@dev",
-                "phpstan/phpstan": "^0.9",
-                "phpunit/phpunit": "5.*||6.*",
-                "squizlabs/php_codesniffer": "^3.2",
-                "wimg/php-compatibility": "^8.0",
-                "wp-coding-standards/wpcs": "^0.14.0"
             },
             "bin": [
                 "src/bin/update-patterns.php",
@@ -1809,7 +1798,6 @@
                     "src/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
@@ -1828,7 +1816,7 @@
                 }
             ],
             "description": "A PHP library for improving your web typography",
-            "time": "2018-02-25T20:27:51+00:00"
+            "time": "2018-03-02T17:13:33+00:00"
         },
         {
             "name": "nystudio107/craft-cookies",
@@ -2157,11 +2145,11 @@
         },
         {
             "name": "nystudio107/craft-typogrify",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-typogrify/zipball/e86a58415bf2d2f6ac7b78933a596b35bf9410d0",
-                "reference": "e86a58415bf2d2f6ac7b78933a596b35bf9410d0",
+                "url": "https://api.github.com/repos/nystudio107/craft-typogrify/zipball/ebc4ea55050d88021d72c78eaae31a6448243e34",
+                "reference": "ebc4ea55050d88021d72c78eaae31a6448243e34",
                 "shasum": ""
             },
             "require": {
@@ -2176,7 +2164,7 @@
                 "schemaVersion": "1.0.0",
                 "hasCpSettings": false,
                 "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-typogrify/master/CHANGELOG.md",
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-typogrify/v1/CHANGELOG.md",
                 "components": {
                     "typogrify": "nystudio107\\typogrify\\services\\TypogrifyService"
                 },
@@ -2187,7 +2175,6 @@
                     "nystudio107\\typogrify\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2199,13 +2186,17 @@
             ],
             "description": "Typogrify prettifies your web typography by preventing ugly quotes and 'widows' and more",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "typogrify"
             ],
-            "time": "2018-02-02T05:46:03+00:00"
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-typogrify/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-typogrify/issues"
+            },
+            "time": "2018-03-12T14:39:09+00:00"
         },
         {
             "name": "nystudio107/craft3-multi-environment",
@@ -3198,11 +3189,11 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.14.1",
+            "version": "2.0.14.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d99969394c66dc3606134af092b8ec561ea5d7c6",
-                "reference": "d99969394c66dc3606134af092b8ec561ea5d7c6",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ef74f3783e964cea477f06e6d6ce209df1f37881",
+                "reference": "ef74f3783e964cea477f06e6d6ce209df1f37881",
                 "shasum": ""
             },
             "require": {
@@ -3232,7 +3223,6 @@
                     "yii\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3289,7 +3279,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-02-24T20:23:06+00:00"
+            "time": "2018-03-13T14:15:01+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",

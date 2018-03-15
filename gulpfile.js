@@ -56,7 +56,7 @@ gulp.task("tailwind", () => {
             $.tailwindcss(pkg.paths.tailwindcss.conf),
             require("autoprefixer"),
         ]))
-        .pipe($.if(process.env.NODE_ENV === "produciton",
+        .pipe($.if(process.env.NODE_ENV === "production",
             $.purgecss({
                 extractors: [{
                     extractor: TailwindExtractor,
@@ -71,8 +71,8 @@ gulp.task("tailwind", () => {
         .pipe(gulp.dest(pkg.paths.build.css));
 });
 
-// Custom PurgeCSS extractor for Tailwind that allows special characters in
-// class names.
+//Custom PurgeCSS extractor for Tailwind that allows special characters in 
+//class names.
 //
 // https://github.com/FullHuman/purgecss#extractor
 class TailwindExtractor {
@@ -80,6 +80,8 @@ class TailwindExtractor {
         return content.match(/[A-z0-9-:\/]+/g);
     }
 }
+
+
 
 // css task - combine & minimize any distribution CSS into the public css folder, and add our banner to it
 gulp.task("css", ["tailwind"], () => {
@@ -413,7 +415,7 @@ gulp.task("set-prod-node-env", function() {
 gulp.task("browserSync", function(){
     $.browserSync.init(['**/*.css', '**/*.js'], {
       browser: "firefoxnightly",  
-      proxy: "http://craft.local",// MAMP Settings
+      proxy: "http://craft-starter.local",// MAMP Settings
       //server: {
       //  baseDir: 'dist'
       //}
@@ -422,7 +424,7 @@ gulp.task("browserSync", function(){
 
 // Default task
 gulp.task("default", ["browserSync","set-dev-node-env","css", "js"], () => {
-    $.fancyLog("-> Livereload listening for changes");
+    $.fancyLog("-> Browsersync listening for changes");
     //$.livereload.listen();
     gulp.watch([pkg.paths.src.scss + "**/*.scss"], ["css"]);
     gulp.watch([pkg.paths.src.css + "**/*.css"], ["css"]);

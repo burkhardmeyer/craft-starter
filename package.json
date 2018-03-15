@@ -40,7 +40,7 @@
             "path": "/img/site/"
         },
         "tailwindcss": {
-            "src": "./src/css/site.css",
+            "src": "./src/scss/style.scss",
             "conf": "./tailwind.js"
         },
         "scss": [],
@@ -49,7 +49,7 @@
     },
     "urls": {
         "live": "https://burkhardmeyer.com/",
-        "local": "https://burkhardmeyer.local/",
+        "local": "https://craft-starter.local/",
         "critical": "https://burkhardmeyer.com/"
     },
     "vars": {
@@ -82,7 +82,7 @@
             {
                 "url": "offline",
                 "template": "offline"
-            }, 
+            },
             {
                 "url": "404",
                 "template": "404"
@@ -117,19 +117,18 @@
         "siteIcon": "./web/img/site/favicon.*"
     },
     "dependencies": {
-        "axios": "^0.18.0",
         "fg-loadcss": "^2.0.1",
         "fontfaceobserver": "^2.0.5",
         "jquery": "^3.3.1",
         "lazysizes": "^4.0.1",
         "loadjs": "^3.3.1",
         "normalize.css": "^8.0.0",
-        "picturefill": "^3.0.2",
-        "tiny-cookie": "^2.1.1",
-        "vue": "^2.5.9"
+        "picturefill": "^3.0.2"
     },
     "devDependencies": {
+        "babel-core": "^6.26.0",
         "babel-plugin-transform-runtime": "^6.15.0",
+        "babel-preset-env": "^1.6.1",
         "babel-preset-es2015": "^6.16.0",
         "browser-sync": "^2.23.6",
         "chalk": "^2.3.2",
@@ -146,6 +145,7 @@
         "gulp-download": "^0.0.1",
         "gulp-favicons": "^2.2.6",
         "gulp-filter": "^5.0.1",
+        "gulp-flatten": "^0.4.0",
         "gulp-fontello": "^0.4.6",
         "gulp-header": "^2.0.1",
         "gulp-if": "^2.0.1",
@@ -167,7 +167,7 @@
         "gulp-uglify": "^3.0.0",
         "moment": "^2.21.0",
         "pa11y": "^5.0.1",
-        "tailwindcss": "^0.4.3",
+        "tailwindcss": "^0.5.1",
         "vinyl-source-stream": "^2.0.0"
     },
     "scripts": {

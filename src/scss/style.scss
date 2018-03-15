@@ -61,7 +61,13 @@
 	 outline: 2px solid var(--outlineColor) !important; /* for non-webkit browsers */
 	 outline: 5px auto -webkit-focus-ring-color !important;
  }
- 
+
+ h1 {
+	font-size: 1.8rem;
+	margin: 0;
+}
+
+
  /**
   * This injects all of Tailwind's utility classes, generated based on your
   * config file.
@@ -73,29 +79,6 @@
   * See: https://github.com/tailwindcss/tailwindcss/issues/53#issuecomment-341413622
   */
  @tailwind utilities;
- 
- /* -- Fonts */
- 
- .fonts-loaded body,
-	 .fonts-loaded h1 {
-		 font-family: Proxima-Nova-Regular, sans-serif;
-		 font-style: normal;
-	 }
-	 .fonts-loaded strong {
-		 font-family: Proxima-Nova-Bold, sans-serif;
-	 }
-	 .fonts-loaded h2,
-	 .fonts-loaded h3, {
-		 font-family: Proxima-Nova-Black, sans-serif;
-	 }
- 
-	 .fonts-loaded .kontakt__email,
-	 .fonts-loaded .kontakt__phone {
-		 font-family: Proxima-Nova-Black, sans-serif;
-	 }
- 
- 
- 
  
  /* -- Fontello */
  
@@ -156,14 +139,6 @@
   * @import "utilities/skew-transforms";
   */
  
- 
-
-
-h1 {
-	font-size: 1.8rem;
-	margin: 0;
-}
-
 
 
 /* This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fontshop.com */
