@@ -108,7 +108,6 @@ gulp.task("css", ["tailwind"], () => {
         .pipe($.size({gzip: true, showFiles: true}))
         .pipe(gulp.dest(pkg.paths.dist.css))
         .pipe($.filter("**/*.css"))
-        //.pipe($.livereload())
         .pipe($.browserSync.stream());
 });
 
@@ -182,7 +181,6 @@ gulp.task("js-inline", ["js-babel"], () => {
         .pipe($.size({gzip: true, showFiles: true}))
         .pipe(gulp.dest(pkg.paths.templates + "_inlinejs"))
         .pipe($.filter("**/*.js"))
-        //.pipe($.livereload())
         .pipe($.browserSync.stream());
 });
 
@@ -205,7 +203,6 @@ gulp.task("js", ["js-inline"], () => {
         .pipe($.size({gzip: true, showFiles: true}))
         .pipe(gulp.dest(pkg.paths.dist.js))
         .pipe($.filter("**/*.js"))
-        //.pipe($.livereload())
         .pipe($.browserSync.stream());
 });
 
@@ -432,7 +429,6 @@ gulp.task("default", ["browserSync","set-dev-node-env","css", "js"], () => {
     gulp.watch([pkg.paths.templates + "**/*.{html,htm,twig}"], () => {
         gulp.src(pkg.paths.templates)
             .pipe($.plumber({errorHandler: onError}))
-            //.pipe($.livereload())
             .pipe($.browserSync.stream());
             
     });

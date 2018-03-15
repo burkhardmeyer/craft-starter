@@ -1,7 +1,7 @@
 {
-  "name": "nystudio107/craft",
-  "description": "nystudio107 Craft 3 CMS scaffolding project",
-  "version": "1.0.15",
+  "name": "burkhardmeyer/craft-starter",
+  "description": "Craft 3 CMS boilerplate project",
+  "version": "1.0.10",
   "keywords": [
     "craft",
     "cms",
@@ -12,19 +12,17 @@
   "homepage": "https://craftcms.com/",
   "type": "project",
   "support": {
-    "email": "info@nystudio107.com",
-    "issues": "https://github.com/nystudio107/craft/issues",
-    "source": "https://github.com/nystudio107/craft",
-    "docs": "https://github.com/nystudio107/craft"
+    "email": "info@burkhardmeyer.com",
+    "issues": "https://github.com/burkhardmeyer/craft-starter/issues",
+    "source": "https://github.com/burkhardmeyer/craft-starter",
+    "docs": "https://github.com/burkhardmeyer/craft-starter"
   },
   "minimum-stability": "RC",
   "require": {
     "craftcms/cms": "3.0.0-RC15",
     "nystudio107/craft-cookies": "1.1.9",
-    "nystudio107/craft-eagerbeaver": "1.0.3",
     "nystudio107/craft-imageoptimize": "1.4.23",
     "nystudio107/craft-minify": "1.2.8",
-    "nystudio107/craft-routemap": "1.1.1",
     "nystudio107/craft-scripts": "^1.2.4",
     "nystudio107/craft-typogrify": "1.1.8",
     "nystudio107/craft3-multi-environment": "^1.0.5",
@@ -50,13 +48,13 @@
     ],
     "post-create-project-cmd": [
       "@php craft setup/welcome",
-      "@php nys-setup welcome"
+      "@php bmeyer-setup welcome"
     ],
     "post-update-cmd": [
-      "@php nys-setup update"
+      "@php bmeyer-setup update"
     ],
     "post-install-cmd": [
-      "@php nys-setup update"
+      "@php bmeyer-setup update"
     ]
   }
 }

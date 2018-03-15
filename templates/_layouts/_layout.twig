@@ -19,7 +19,7 @@
         {% import "_partials/_macros.twig" as macro %}
         {% include "_partials/_global_header.twig" %}
 
-        {# -- ServiceWorker, loadjs, and tiny-cookie -- #}
+        {# -- ServiceWorker, loadjs & modernizr-- #}
         <script>
             {% if craft.app.config.general.isSystemOn %}
                 {{ source("_inlinejs/register-service-worker.min.js") }}

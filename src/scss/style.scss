@@ -13,6 +13,15 @@
  */
  @tailwind preflight;
 
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+ @tailwind components;
+
  /**
   * Here you would add any of your custom component classes; stuff that you'd
   * want loaded *before* the utilities so that the utilities could still
@@ -80,6 +89,31 @@
   */
  @tailwind utilities;
  
+
+ 
+/* Custom Fonts */
+
+ .fonts-loaded body,
+ .fonts-loaded h1 {
+	 font-family: Proxima-Nova-Regular, sans-serif;
+	 font-style: normal;
+ }
+ .fonts-loaded strong {
+	 font-family: Proxima-Nova-Bold, sans-serif;
+ }
+ .fonts-loaded h2,
+ .fonts-loaded h3, {
+	 font-family: Proxima-Nova-Black, sans-serif;
+ }
+
+ .fonts-loaded .kontakt__email,
+ .fonts-loaded .kontakt__phone {
+	 font-family: Proxima-Nova-Black, sans-serif;
+ }
+
+
+
+
  /* -- Fontello */
  
  .fonts-loaded [class^="icon-"]:before {
