@@ -111,35 +111,6 @@ gulp.task("css", ["tailwind"], () => {
         .pipe($.browserSync.stream());
 });
 
-// js task - minimize any distribution Javascript into the public js folder, and add our banner to it
-gulp.task("js-app", () => {
-    $.fancyLog("-> Building js-app");
-
-    if (process.env.NODE_ENV === "production") {
-        const browserifyMethod = $.browserify;
-    } else {
-        const browserifyMethod = $.browserifyIncremental;
-    }
-
-    const bundleStream = browserifyMethod(pkg.paths.src.jsApp, {
-        paths: pkg.globs.jsIncludes,
-        cacheFile: pkg.paths.build.base + "browserify-cache.json"
-    })
-        .transform($.babelify, {presets: ["es2015"]})
-        .transform($.vueify)
-        .bundle();
-
-    return bundleStream
-        .pipe($.plumber({errorHandler: onError}))
-        .pipe($.vinylSourceStream("app.js"))
-        .pipe($.if(process.env.NODE_ENV === "production",
-            $.streamify($.uglify())
-        ))
-        .pipe($.streamify($.header(banner, {pkg: pkg})))
-        .pipe($.streamify($.size({gzip: true, showFiles: true})))
-        .pipe(gulp.dest(pkg.paths.dist.js));
-
-});
 
 // babel js task - transpile our Javascript into the build directory
 gulp.task("js-babel", () => {
