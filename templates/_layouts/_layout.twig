@@ -101,10 +101,6 @@
             var retina = window.devicePixelRatio > 1;
         </script>
 
-        {# -- jQuery JS -- 
-        <script src="{{ baseUrl }}js/jquery.min.{{staticAssetsVersion}}.js" ></script> #}
-
-        {# -- </head> JS -- #}
         {% block _head_js %}
         {% endblock %}
 
@@ -134,16 +130,6 @@
             {% include "_partials/_global_footer.twig" %}
 
         </div>
-
-        {# -- VueJS & Axios, along with our main app component instantiation -- 
-        <script>
-            // define a dependency bundle
-
-            loadjs(['{{ baseUrl }}js/main.min.{{staticAssetsVersion}}.js'], 'main');
-
-            loadjs.ready('main', {success: function () {/* All Javascript files are fully loaded */
-                }});
-        </script>  #}
 
         <script>
             loadjs(
