@@ -18,7 +18,7 @@
   },
   "minimum-stability": "RC",
   "require": {
-    "craftcms/cms": "3.0.3.1",
+    "craftcms/cms": "3.0.9",
     "nystudio107/craft-cookies": "1.1.9",
     "nystudio107/craft-imageoptimize": "1.4.31",
     "nystudio107/craft-minify": "1.2.8",
@@ -47,13 +47,13 @@
     ],
     "post-create-project-cmd": [
       "@php craft setup/welcome",
-      "@php bmeyer-setup welcome"
+      "@php nys-setup welcome"
     ],
     "post-update-cmd": [
-      "@php bmeyer-setup update"
+      "@php nys-setup update"
     ],
     "post-install-cmd": [
-      "@php bmeyer-setup update"
+      "@php nys-setup update"
     ]
   }
 }

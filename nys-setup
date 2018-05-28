@@ -1,10 +1,10 @@
 #!/usr/bin/env php
 <?php
 /**
- * @author    burkhardmeyer
- * @copyright Copyright (c) 2018 Burkhard Meyer
- * @link      https://burkhardmeyer.com/
- * @package   burkhardmeyer/craft-starter
+ * @author    nystudio107
+ * @copyright Copyright (c) 2017 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   nystudio107/craft
  * @since     1.0.0
  * @license   MIT
  */
@@ -15,8 +15,11 @@ use mikehaertl\shellcommand\Command as ShellCommand;
 
 const INSTALL_PLUGINS = [
     'async-queue',
+    'eager-beaver',
     'image-optimize',
     'minify',
+    'routemap',
+    'seomatic',
     'typogrify',
 ];
 
@@ -213,7 +216,7 @@ function welcomeNysCraft()
     $script = './craft setup';
     outputString(PHP_EOL.'    '.$script, Console::FG_GREEN);
     outputString(PHP_EOL.'Then to set up Craft 3 Multi-Environment & Craft-Scripts, run:', Console::FG_YELLOW);
-    $script = './bmeyer-setup';
+    $script = './nys-setup';
     outputString(PHP_EOL.'    '.$script, Console::FG_GREEN);
     outputString(PHP_EOL.'Your setup is not complete until you run these two commands.', Console::FG_YELLOW);
 }
@@ -224,7 +227,7 @@ function welcomeNysCraft()
 function updateNysCraft()
 {
     // Say hello
-    outputString(PHP_EOL.'Updating bmeyer-setup', Console::FG_YELLOW);
+    outputString(PHP_EOL.'Updating nys-setup', Console::FG_YELLOW);
     // Set up Craft-Scripts
     setupCraftScripts();
     // Say goodbye
@@ -237,7 +240,7 @@ function updateNysCraft()
 function setupNysCraft()
 {
     // Say hello
-    outputString(PHP_EOL.'Welcome to bmeyer-setup', Console::FG_YELLOW);
+    outputString(PHP_EOL.'Welcome to nys-setup', Console::FG_YELLOW);
     // Set up Craft-Scripts
     setupCraftScripts();
     // Setup Craft 3 Multi-Environment
