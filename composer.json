@@ -18,7 +18,7 @@
   },
   "minimum-stability": "RC",
   "require": {
-    "craftcms/cms": "3.0.9",
+    "craftcms/cms": "^3.0.0",
     "nystudio107/craft-cookies": "1.1.9",
     "nystudio107/craft-imageoptimize": "1.4.31",
     "nystudio107/craft-minify": "1.2.8",

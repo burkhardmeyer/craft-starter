@@ -36,14 +36,14 @@ Then `cd` to your new project directory, and run Craft's `setup` console command
     cd PATH
     ./craft setup
 
-Finally, run the `bmeyer-setup` command to configure Craft-Scripts & Craft 3 Multi-Environment based on your newly created `.env` settings:
+Finally, run the `nys-setup` command to configure Craft-Scripts & Craft 3 Multi-Environment based on your newly created `.env` settings:
 
-    ./bmeyer-setup
+    ./nys-setup
 
 That's it, enjoy!
 
 If you ever delete the `vendor` folder or such, just re-run:
 
-    ./bmeyer-setup
+    ./nys-setup
 
 ...and it will re-create the symlink to your `.env.sh`; don't worry, it won't stomp on any changes you've made.
