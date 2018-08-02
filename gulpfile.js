@@ -14,6 +14,9 @@ const $ = require("gulp-load-plugins")({
     scope: ["devDependencies"]
 });
 
+// print
+const print = require('gulp-print').default;
+
 // error logging
 const onError = (err) => {
     console.log(err);
@@ -89,7 +92,7 @@ gulp.task("css", ["tailwind"], () => {
     return gulp.src(pkg.globs.distCss)
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.newer({dest: pkg.paths.dist.css + pkg.vars.siteCssName}))
-        .pipe($.print())
+        .pipe(print())
         .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.concat(pkg.vars.siteCssName))
         .pipe($.if(process.env.NODE_ENV === "production",
