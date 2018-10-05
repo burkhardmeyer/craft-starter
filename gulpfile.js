@@ -349,7 +349,7 @@ gulp.task("imagemin", () => {
 gulp.task("generate-fontello", () => {
     return gulp.src(pkg.paths.src.fontello + "config.json")
         .pipe($.fontello())
-        .pipe($.print())
+        .pipe(print())
         .pipe(gulp.dest(pkg.paths.build.fontello));
 });
 
