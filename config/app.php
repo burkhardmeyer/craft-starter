@@ -26,7 +26,7 @@ return [
     ],
 
     // Live (production) environment
-    'live'  => [
+    'production'  => [
         'components' => [
             // Default to database 0, so PHP sessions are in a separate database
             'redis' => [

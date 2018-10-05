@@ -396,7 +396,6 @@ gulp.task("browserSync", function(){
 // Default task
 gulp.task("default", ["browserSync","set-dev-node-env","css", "js"], () => {
     $.fancyLog("-> Browsersync listening for changes");
-    //$.livereload.listen();
     gulp.watch([pkg.paths.src.scss + "**/*.scss"], ["css"]);
     gulp.watch([pkg.paths.src.css + "**/*.css"], ["css"]);
     gulp.watch([pkg.paths.src.js + "**/*.js"], ["js"]);

@@ -21,6 +21,7 @@ const INSTALL_PLUGINS = [
     'routemap',
     'seomatic',
     'typogrify',
+    'cookies',
 ];
 
 const CRAFT_SCRIPTS_SETUP = [
