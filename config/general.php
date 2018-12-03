@@ -26,7 +26,7 @@ return [
     ],
 
     // Dev environment settings
-    'dev' => [
+    'local' => [
         // Base site URL
         'siteUrl' => null,
 
@@ -41,7 +41,7 @@ return [
     ],
 
     // Production environment settings
-    'production' => [
+    'live' => [
         // Base site URL
         'siteUrl' => null,
     ],
