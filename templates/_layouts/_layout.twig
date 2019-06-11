@@ -21,7 +21,7 @@
 
         {# -- ServiceWorker, loadjs & modernizr-- #}
         <script>
-            {% if craft.app.config.general.isSystemOn %}
+            {% if craft.app.config.general.isSystemLive %}
                 {{ source("_inlinejs/register-service-worker.min.js") }}
             {% endif %}
             {{ source("_inlinejs/loadjs.min.js") }}
