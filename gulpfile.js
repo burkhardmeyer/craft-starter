@@ -78,11 +78,9 @@ gulp.task("tailwind", () => {
 //class names.
 //
 // https://github.com/FullHuman/purgecss#extractor
-class TailwindExtractor {
-    static extract(content) {
-        return content.match(/[A-Za-z0-9-_:/]+/g) || []
-    }
-}
+const TailwindExtractor = (content) => {
+    return content.match(/[A-z0-9-:\/]+/g);
+  }
 
 
 
