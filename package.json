@@ -117,6 +117,7 @@
         "siteIcon": "./web/img/site/favicon.*"
     },
     "dependencies": {
+        "autoprefixer": "^9.7.4",
         "fg-loadcss": "^2.1.0",
         "fontfaceobserver": "^2.1.0",
         "jquery": "^3.4.1",
