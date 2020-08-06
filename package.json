@@ -121,7 +121,7 @@
         "autoprefixer": "^9.7.4",
         "fg-loadcss": "^2.1.0",
         "fontfaceobserver": "^2.1.0",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "lazysizes": "^5.2.0",
         "loadjs": "^4.2.0",
         "normalize.css": "^8.0.1",
